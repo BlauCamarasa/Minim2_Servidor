@@ -29,9 +29,6 @@ public class Video {
 
     @Override
     public String toString() {
-        return "Video{" +
-                "descripcion='" + descripcion + '\'' +
-                ", url='" + url + '\'' +
-                '}';
+        return "Video{ descripcion= " + descripcion + ", url= " + url + " }";
     }
 }

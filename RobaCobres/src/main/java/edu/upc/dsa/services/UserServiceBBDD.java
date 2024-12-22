@@ -52,17 +52,19 @@ public class UserServiceBBDD {
             List<Video> listaDeVideos = new ArrayList<>();
 
             // Agregar videos a la lista
-            listaDeVideos.add(new Video("Normas de juego", "https://www.youtube.com/watch?v=qp0HIF3SfI4"));
-            listaDeVideos.add(new Video("Guardado de partida", "https://www.youtube.com/watch?v=H14bBuluwB8"));
-            listaDeVideos.add(new Video("Recuperar vidas", "https://www.youtube.com/watch?v=Ge7c7otG2mk"));
-            listaDeVideos.add(new Video("Como ganar dinero", "https://www.youtube.com/watch?v=cef35Fk7YD8"));
-
+            listaDeVideos.add(new Video("Normas de juego", "https://www.youtube.com/watch?v=oMfuX_bhrDw"));
+            listaDeVideos.add(new Video("Guardado de partida", "https://www.youtube.com/watch?v=FvVoBFxtHC8"));
+            listaDeVideos.add(new Video("Recuperar vidas", "https://www.youtube.com/watch?v=79fzeNUqQbQ"));
+            listaDeVideos.add(new Video("Como ganar dinero", "https://www.youtube.com/watch?v=zpzdgmqIHOQ"));
+            for(Video v:listaDeVideos){
+                logger.info(v.toString());
+            }
             GenericEntity<List<Video>> entity = new GenericEntity<List<Video>>(listaDeVideos) {};
             return Response.status(201).entity(entity).build();
         }
         catch(Exception ex){
             logger.warn("Attention, Error");
-            return Response.status(506).build();
+            return Response.status(500).build();
         }
     }
 
